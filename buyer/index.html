@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GasKu — Pesan Gas LPG Online</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-icon">🔥</span>
+      <span>GasKu</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Beranda</a></li>
+      <li><a href="produk.html">Produk</a></li>
+      <li><a href="pesanan.html">Pesanan Saya</a></li>
+      <li><a href="riwayat.html">Riwayat</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="keranjang.html" class="btn-cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <span class="cart-badge" id="cartBadge">0</span>
+      </a>
+      <a href="profil.html" class="btn-profile">
+        <img src="https://ui-avatars.com/api/?name=Budi+Santoso&background=ff6b35&color=fff&size=36" alt="Profil">
+        <span>Budi</span>
+      </a>
+    </div>
+    <button class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="pulse-dot"></span>
+      Pengiriman Cepat 1–3 Jam
+    </div>
+    <h1 class="hero-title">Gas LPG <br><span class="highlight">Sampai di Depan Pintu</span></h1>
+    <p class="hero-desc">Pesan gas LPG Pertamina 3kg, . Praktis, aman, dan terpercaya. Gratis ongkir untuk area dalam kota!</p>
+    <div class="hero-cta">
+      <a href="produk.html" class="btn-primary">Pesan Sekarang</a>
+      <a href="#cara-order" class="btn-ghost">Cara Order</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num">4.9★</span>
+        <span class="stat-label">Rating</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-num">12K+</span>
+        <span class="stat-label">Pelanggan</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-num">98%</span>
+        <span class="stat-label">On-Time</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="gas-card floating">
+      <div class="gas-card-inner">
+        <div class="gas-icon-wrap">🛢️</div>
+        <div class="gas-card-info">
+          <span class="gas-card-name">LPG 3 kg</span>
+          <span class="gas-card-price">Rp 20.000</span>
+        </div>
+        <span class="tag-available">Tersedia</span>
+      </div>
+    </div>
+    <div class="delivery-ping">
+      <span>🛵</span> Kurir dalam perjalanan…
+    </div>
+  </div>
+</section>
+
+<!-- PRODUK UNGGULAN -->
+<section class="section products-section" id="produk">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">Produk Kami</span>
+      <h2>Pilih Ukuran <span class="highlight">Gas LPG</span></h2>
+      <p>Tersedia tabung gas 3 kg sesuai kebutuhan rumah dan usaha Anda</p>
+    </div>
+    <div class="products-grid" id="productsGrid">
+      <!-- akan di-generate JS -->
+    </div>
+    <div class="center-cta">
+      <a href="produk.html" class="btn-primary">Lihat Semua Produk</a>
+    </div>
+  </div>
+</section>
+
+<!-- CARA ORDER -->
+<section class="section how-section" id="cara-order">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">Mudah & Cepat</span>
+      <h2>Cara <span class="highlight">Pesan Gas</span></h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <div class="step-icon">🛒</div>
+        <h3>Pilih Produk</h3>
+        <p>Pilih ukuran dan jumlah tabung gas yang Anda butuhkan</p>
+      </div>
+      <div class="step-arrow">→</div>
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <div class="step-icon">📍</div>
+        <h3>Isi Alamat</h3>
+        <p>Masukkan alamat pengiriman Anda dengan lengkap dan tepat</p>
+      </div>
+      <div class="step-arrow">→</div>
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <div class="step-icon">💳</div>
+        <h3>Bayar</h3>
+        <p>Pilih metode pembayaran: transfer, QRIS, atau COD</p>
+      </div>
+      <div class="step-arrow">→</div>
+      <div class="step-card">
+        <div class="step-num">04</div>
+        <div class="step-icon">🛵</div>
+        <h3>Terima Gas</h3>
+        <p>Gas diantar ke rumah Anda dalam 1–3 jam setelah konfirmasi</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROMO BANNER -->
+<section class="promo-section">
+  <div class="container">
+    <div class="promo-card">
+      <div class="promo-text">
+        <span class="promo-badge">⚡ Promo Terbatas</span>
+        <h2>Gratis Ongkir untuk <br>Order Pertama Anda!</h2>
+        <p>Daftar sekarang dan nikmati gratis ongkos kirim untuk pemesanan pertama ke seluruh area dalam kota.</p>
+        <a href="produk.html" class="btn-white">Klaim Promo →</a>
+      </div>
+      <div class="promo-visual">
+        <div class="promo-bubble b1">🔥</div>
+        <div class="promo-bubble b2">🛢️</div>
+        <div class="promo-bubble b3">🎁</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KENAPA KAMI -->
+<section class="section why-section">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">Keunggulan</span>
+      <h2>Kenapa Pilih <span class="highlight">GasKu?</span></h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">⚡</div>
+        <h3>Pengiriman Ekspres</h3>
+        <p>Gas sampai dalam 1–3 jam. Kami jamin ketepatan waktu atau uang kembali.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🔒</div>
+        <h3>Gas Resmi Pertamina</h3>
+        <p>Semua produk bergaransi keaslian dan bersegel resmi dari Pertamina.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">💬</div>
+        <h3>CS 24/7</h3>
+        <p>Tim customer service siap membantu Anda kapan saja, hari dan malam.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">💰</div>
+        <h3>Harga Transparan</h3>
+        <p>Harga sesuai HET pemerintah. Tidak ada biaya tersembunyi.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONI -->
+<section class="section review-section">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">Ulasan Pelanggan</span>
+      <h2>Apa Kata <span class="highlight">Mereka?</span></h2>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p>"Pesannya gampang banget, langsung diproses dan gas datang kurang dari 2 jam. Mantap!"</p>
+        <div class="reviewer">
+          <img src="https://ui-avatars.com/api/?name=Siti+Rahayu&background=ff6b35&color=fff&size=36" alt="">
+          <div>
+            <strong>Siti Rahayu</strong>
+            <span>Ibu Rumah Tangga, Yogyakarta</span>
+          </div>
+        </div>
+      </div>
+      <div class="review-card featured">
+        <div class="review-stars">★★★★★</div>
+        <p>"Sebagai pemilik warung makan, GasKu sangat membantu. Stok gas selalu terjaga dan harga sesuai standar."</p>
+        <div class="reviewer">
+          <img src="https://ui-avatars.com/api/?name=Pak+Hendra&background=1a1a2e&color=fff&size=36" alt="">
+          <div>
+            <strong>Pak Hendra</strong>
+            <span>Pemilik Warung Makan, Solo</span>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★☆</div>
+        <p>"Aplikasinya simpel dan jelas. Suka fitur tracking kurir-nya, jadi tahu gas mau nyampe jam berapa."</p>
+        <div class="reviewer">
+          <img src="https://ui-avatars.com/api/?name=Dewi+Putri&background=ff6b35&color=fff&size=36" alt="">
+          <div>
+            <strong>Dewi Putri</strong>
+            <span>Mahasiswi, Semarang</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">
+          <span class="logo-icon">🔥</span>
+          <span>GasKu</span>
+        </a>
+        <p>Platform pemesanan gas LPG online terpercaya. Cepat, aman, dan mudah.</p>
+        <div class="footer-socials">
+          <a href="#">📘</a>
+          <a href="#">📸</a>
+          <a href="#">🐦</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Layanan</h4>
+        <ul>
+          <li><a href="produk.html">Produk Gas</a></li>
+          <li><a href="pesanan.html">Pesanan Saya</a></li>
+          <li><a href="riwayat.html">Riwayat Pembelian</a></li>
+          <li><a href="#">Lacak Pesanan</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Bantuan</h4>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Cara Pesan</a></li>
+          <li><a href="#">Syarat & Ketentuan</a></li>
+          <li><a href="#">Kebijakan Privasi</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Kontak</h4>
+        <ul>
+          <li>📞 0812-3456-7890</li>
+          <li>✉️ halo@gasku.id</li>
+          <li>📍 Yogyakarta, Indonesia</li>
+          <li>🕐 Buka 07.00 – 22.00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 GasKu. Semua hak cipta dilindungi.</span>
+      <span>Dibuat dengan ❤️ di Indonesia</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/cart.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

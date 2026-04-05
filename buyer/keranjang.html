@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Keranjang — GasKu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-icon">🔥</span>
+      <span>GasKu</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="produk.html">Produk</a></li>
+      <li><a href="pesanan.html">Pesanan Saya</a></li>
+      <li><a href="riwayat.html">Riwayat</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="keranjang.html" class="btn-cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <span class="cart-badge" id="cartBadge">0</span>
+      </a>
+      <a href="profil.html" class="btn-profile">
+        <img src="https://ui-avatars.com/api/?name=Budi+Santoso&background=ff6b35&color=fff&size=36" alt="Profil">
+        <span>Budi</span>
+      </a>
+    </div>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="container">
+    <span class="section-label">Belanja</span>
+    <h1>Keranjang <span class="highlight">Saya</span></h1>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="cart-layout">
+      <!-- CART ITEMS -->
+      <div class="cart-items" id="cartItems">
+        <!-- JS render -->
+      </div>
+      <!-- ORDER SUMMARY -->
+      <div class="cart-summary">
+        <h3>Ringkasan Pesanan</h3>
+        <div class="summary-rows" id="summaryRows"></div>
+        <div class="promo-input-wrap">
+          <input type="text" id="promoCode" placeholder="Kode Promo">
+          <button id="applyPromo">Pakai</button>
+        </div>
+        <div class="summary-total" id="summaryTotal"></div>
+
+        <div class="payment-methods">
+          <h4>Metode Pembayaran</h4>
+          <label class="pay-option">
+            <input type="radio" name="payment" value="cod" checked>
+            <span class="pay-icon">💵</span>
+            <span>Bayar di Tempat (COD)</span>
+          </label>
+          <label class="pay-option">
+            <input type="radio" name="payment" value="transfer">
+            <span class="pay-icon">🏦</span>
+            <span>Transfer Bank</span>
+          </label>
+          <label class="pay-option">
+            <input type="radio" name="payment" value="qris">
+            <span class="pay-icon">📱</span>
+            <span>QRIS</span>
+          </label>
+        </div>
+
+        <div class="address-form">
+          <h4>Alamat Pengiriman</h4>
+          <input type="text" placeholder="Nama Penerima" id="receiverName">
+          <input type="tel" placeholder="No. Telepon" id="receiverPhone">
+          <textarea placeholder="Alamat lengkap (jalan, RT/RW, kelurahan, kecamatan)" id="addressFull" rows="3"></textarea>
+          <input type="text" placeholder="Catatan untuk kurir (opsional)" id="noteKurir">
+        </div>
+
+        <button class="btn-primary full-width" id="checkoutBtn">Pesan Sekarang →</button>
+        <a href="produk.html" class="btn-ghost full-width" style="text-align:center;display:block;margin-top:8px;">Tambah Produk</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Order Success Modal -->
+<div class="modal-overlay" id="successOverlay" style="display:none">
+  <div class="modal success-modal">
+    <div class="success-icon">✅</div>
+    <h2>Pesanan Berhasil!</h2>
+    <p>Pesanan Anda sedang diproses. Kurir akan segera menghubungi Anda.</p>
+    <div class="order-id-box" id="orderIdBox"></div>
+    <a href="pesanan.html" class="btn-primary" style="margin-top:16px;display:inline-block">Lihat Pesanan</a>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="assets/js/cart.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/keranjang.js"></script>
+</body>
+</html>
