@@ -325,10 +325,9 @@
 </head>
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-gashu sticky-top">
     <div class="container">
-        <a class="navbar-brand" href="<?= isset($_SESSION['role']) && $_SESSION['role'] === 'seller' ? 'seller/dashboard.php' : 'index.php' ?>">
+        <a class="navbar-brand" href="<?= (strpos($_SERVER['REQUEST_URI'], '/buyer/') !== false) ? '../index.php' : 'index.php' ?>">
             <i class="bi bi-fire me-2"></i>Gas<span>Ku</span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
@@ -338,20 +337,41 @@
             <ul class="navbar-nav ms-auto align-items-lg-center gap-1">
                 <?php if (isLoggedIn()): ?>
                     <?php if (isBuyer()): ?>
-                        <li class="nav-item"><a class="nav-link" href="/index.php"><i class="bi bi-house me-1"></i>Beranda</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/buyer/pesanan.php"><i class="bi bi-bag me-1"></i>Pesanan Saya</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/buyer/keranjang.php"><i class="bi bi-cart3 me-1"></i>Keranjang</a></li>
+                        <?php 
+                            // Cek apakah kita sedang berada di dalam folder buyer
+                            $is_in_buyer = (strpos($_SERVER['REQUEST_URI'], '/buyer/') !== false); 
+                        ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= $is_in_buyer ? '../index.php' : 'index.php'; ?>">
+                                <i class="bi bi-house me-1"></i>Beranda
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= $is_in_buyer ? 'pesanan.php' : 'buyer/pesanan.php'; ?>">
+                                <i class="bi bi-bag me-1"></i>Pesanan Saya
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= $is_in_buyer ? 'keranjang.php' : 'buyer/keranjang.php'; ?>">
+                                <i class="bi bi-cart3 me-1"></i>Keranjang
+                            </a>
+                        </li>
                     <?php elseif (isSeller()): ?>
                         <li class="nav-item"><a class="nav-link" href="dashboard.php"><i class="bi bi-speedometer2 me-1"></i>Dashboard</a></li>
                         <li class="nav-item"><a class="nav-link" href="produk.php"><i class="bi bi-box-seam me-1"></i>Produk</a></li>
                         <li class="nav-item"><a class="nav-link" href="pesanan.php"><i class="bi bi-list-check me-1"></i>Pesanan</a></li>
                     <?php endif; ?>
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
                             <i class="bi bi-person-circle me-1"></i><?= htmlspecialchars($_SESSION['nama']) ?>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="../logout.php"><i class="bi bi-box-arrow-right me-2"></i>Keluar</a></li>
+                            <li>
+                                <a class="dropdown-item" href="<?= (strpos($_SERVER['REQUEST_URI'], '/buyer/') !== false || strpos($_SERVER['REQUEST_URI'], '/seller/') !== false) ? '../logout.php' : 'logout.php'; ?>">
+                                    <i class="bi bi-box-arrow-right me-2"></i>Keluar
+                                </a>
+                            </li>
                         </ul>
                     </li>
                 <?php else: ?>
