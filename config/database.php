@@ -2,9 +2,9 @@
 // config/database.php
 
 // SESUAIKAN: Ganti 'db' dengan nama service di docker-compose.yml kamu
-define('DB_HOST', 'db'); 
+define('DB_HOST', 'localhost'); 
 define('DB_USER', 'root');
-define('DB_PASS', 'password'); // Sesuaikan dengan MYSQL_ROOT_PASSWORD di Docker
+define('DB_PASS', ''); // Sesuaikan dengan MYSQL_ROOT_PASSWORD di Docker
 define('DB_NAME', 'gas_shop');
 
 function getDB() {
