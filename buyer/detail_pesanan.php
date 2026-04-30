@@ -26,6 +26,8 @@ $detail->bind_param('i', $id);
 $detail->execute();
 $items = $detail->get_result()->fetch_all(MYSQLI_ASSOC);
 $db->close();
+
+$linkKonfirmasiBayar = buatLinkKonfirmasiBayar($pesanan['telp_seller'], $pesanan['kode_pesanan'], $_SESSION['nama']);
 ?>
 
 <div>
@@ -69,4 +71,11 @@ $db->close();
         <?php endif; ?>
         <div><strong>Tanggal:</strong> <?= date('d M Y, H:i', strtotime($pesanan['created_at'])) ?></div>
     </div>
+
+    <a class="btn btn-success w-100 mt-3"
+       href="<?= htmlspecialchars($linkKonfirmasiBayar) ?>"
+       target="_blank"
+       rel="noopener">
+        <i class="bi bi-whatsapp me-2"></i>Saya Sudah Bayar
+    </a>
 </div>

@@ -36,6 +36,35 @@ function generateKodePesanan() {
     return 'GAS' . date('Ymd') . strtoupper(substr(uniqid(), -5));
 }
 
+function normalizeNomorWhatsApp($nomor) {
+    $digits = preg_replace('/\D+/', '', $nomor ?? '');
+
+    if ($digits === '') {
+        return '';
+    }
+
+    if (strpos($digits, '0') === 0) {
+        return '62' . substr($digits, 1);
+    }
+
+    if (strpos($digits, '8') === 0) {
+        return '62' . $digits;
+    }
+
+    return $digits;
+}
+
+function buatLinkKonfirmasiBayar($nomorPenjual, $kodePesanan, $namaPembeli) {
+    $nomor = normalizeNomorWhatsApp($nomorPenjual);
+    $pesan = "Saya sudah bayar dengan ID pesanan {$kodePesanan} atas nama {$namaPembeli}";
+
+    if ($nomor !== '') {
+        return 'https://wa.me/' . $nomor . '?text=' . rawurlencode($pesan);
+    }
+
+    return 'https://web.whatsapp.com/send?text=' . rawurlencode($pesan);
+}
+
 // Mulai session jika belum ada
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
